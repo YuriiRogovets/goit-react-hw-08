@@ -1,7 +1,7 @@
 import { useId } from "react";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 import * as Yup from "yup";
 
 import css from "./ContactForm.module.css";
@@ -62,8 +62,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-/* <label>Name</label>
-        <input type="text" name="userName" />
-        <label>Number</label>
-        <input type="number" name="Number" /> */

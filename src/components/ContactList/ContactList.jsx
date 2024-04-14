@@ -5,7 +5,7 @@ import {
   selectError,
   selectFilteredContacts,
   selectLoading,
-} from "../../redux/selectors";
+} from "../../redux/contacts/selectors";
 import Error from "../Error/Error";
 import Loader from "../Loader/Loader";
 
