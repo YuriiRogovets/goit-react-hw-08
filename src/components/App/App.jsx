@@ -1,6 +1,8 @@
-// import ContactForm from "../ContactForm/ContactForm";
-// import SearchBox from "../SearchBox/SearchBox";
-// import ContactList from "../ContactList/ContactList";
+import { Route, Routes } from "react-router-dom";
+import { lazy } from "react";
+import { Layout } from "../Layout/Layout";
+import "./App.module.css";
+
 const HomePage = lazy(() => import("../../pages/HomePage"));
 const ContactsPage = lazy(() => import("../../pages/ContactsPage"));
 const LoginPage = lazy(() => import("../../pages/LoginPage"));
@@ -8,14 +10,12 @@ const RegistrationPage = lazy(() => import("../../pages/RegistrationPage"));
 const NotFoundPage = lazy(() => import("../NotFoundPage/NotFoundPage"));
 
 // import { useDispatch } from "react-redux";
-import { Route, Routes } from "react-router-dom";
-import { lazy } from "react";
-// import { fetchContacts } from "../../redux/contactsOps";
-import "./App.module.css";
-// import Layout from "../Layout/Layout";
-import {} from "react-router-dom";
 
-function App() {
+// import { fetchContacts } from "../../redux/contactsOps";
+
+// import Layout from "../Layout/Layout";
+
+const App = () => {
   // const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -23,16 +23,18 @@ function App() {
   // }, [dispatch]);
 
   return (
-    <div>
+    <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
-    </div>
+    </>
   );
-}
+};
 
 export default App;

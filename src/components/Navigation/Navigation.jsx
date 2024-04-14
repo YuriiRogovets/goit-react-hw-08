@@ -8,7 +8,7 @@ const getNavLinkClassNames = ({ isActive }) => {
   });
 };
 
-const Navigation = () => {
+export const Navigation = () => {
   return (
     <nav>
       <NavLink className={getNavLinkClassNames} to="/">
@@ -26,5 +26,3 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;
