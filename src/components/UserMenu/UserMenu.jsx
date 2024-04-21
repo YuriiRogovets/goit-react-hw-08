@@ -8,8 +8,8 @@ const UserMenu = () => {
   const userData = useSelector(selectUser);
 
   return (
-    <div>
-      <p className={css.userName}>{userData.name}</p>
+    <div className={css.userMenuWrapp}>
+      <p className={css.userName}>User: {userData.name}</p>
       <button
         className={css.btnLogOut}
         onClick={() => dispatch(logOut())}

@@ -4,6 +4,7 @@ nav {
   padding: 20px;
   /* border-bottom: 2px solid rgb(171, 170, 170);
   margin-bottom: 20px; */
+  justify-content: space-between;
 }
 
 .link {
