@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { lazy, useEffect } from "react";
-import { Layout } from "../Layout/Layout";
+import { Suspense, lazy, useEffect } from "react";
+import Layout from "../Layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.module.css";
 import { refreshUser } from "../../redux/auth/operations";
@@ -25,10 +25,10 @@ const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+    <Layout>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route
             path="/contacts"
             element={
@@ -54,9 +54,9 @@ const App = () => {
             }
           />
           <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </>
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 };
 

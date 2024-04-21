@@ -1,16 +1,15 @@
-import { Suspense } from "react";
+// import { Suspense } from "react";
+// import { Outlet } from "react-router-dom";
+import AppBar from "../AppBar/AppBar";
 
-import { AppBar } from "../AppBar/AppBar";
-import { Outlet } from "react-router-dom";
-
-export const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div>
       <AppBar />
 
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      {children}
     </div>
   );
 };
+
+export default Layout;
